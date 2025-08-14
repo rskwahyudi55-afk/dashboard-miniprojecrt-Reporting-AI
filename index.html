@@ -11,17 +11,17 @@
     <!-- Chart.js Datalabels Plugin CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <style>
-        /* Custom styles for responsiveness and clean display */
+        /* Gaya kustom untuk responsivitas dan tampilan bersih */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8faff; /* Light background */
+            background-color: #f8faff; /* Latar belakang terang */
         }
         .chart-container {
             position: relative;
-            height: 300px; /* Fixed height for charts */
+            height: 450px; /* Tinggi yang disesuaikan untuk grafik agar nominal terlihat lebih jelas */
             width: 100%;
         }
-        /* Ensure responsive charts */
+        /* Memastikan grafik responsif */
         canvas {
             max-width: 100%;
             height: auto;
@@ -32,7 +32,7 @@
     <div class="container mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-10">
         <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-800">Sneakers & Streetwear Sales Dashboard 📈</h1>
 
-        <!-- Summary Metric Section -->
+        <!-- Bagian Metrik Ringkasan -->
         <div class="mb-8 p-6 bg-blue-50 rounded-xl shadow-inner border border-blue-200">
             <h2 class="text-xl md:text-2xl font-semibold text-blue-700 mb-4 text-center">Total Sales Overview</h2>
             <div id="totalSalesMetric" class="text-center text-4xl md:text-5xl font-extrabold text-blue-900 animate-pulse">
@@ -40,39 +40,39 @@
             </div>
         </div>
 
-        <!-- Filter Section -->
+        <!-- Bagian Filter -->
         <div class="flex flex-col md:flex-row justify-center gap-4 mb-8">
-            <!-- Brand Filter Dropdown -->
+            <!-- Dropdown Filter Merek -->
             <div class="w-full md:w-1/2">
                 <label for="brandFilter" class="block text-lg font-medium text-gray-700 mb-2">Filter by Brand:</label>
                 <select id="brandFilter" class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900">
-                    <option value="All">All Brands</option>
+                    <option value="All">All Brand</option>
                 </select>
             </div>
-            <!-- Country Filter Dropdown -->
+            <!-- Dropdown Filter Negara -->
             <div class="w-full md:w-1/2">
                 <label for="countryFilter" class="block text-lg font-medium text-gray-700 mb-2">Filter by Country:</label>
                 <select id="countryFilter" class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900">
-                    <option value="All">All Countries</option>
+                    <option value="All">All Country</option>
                 </select>
             </div>
         </div>
         <div class="flex justify-center mb-8">
             <button id="clearFiltersBtn" class="px-6 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 transition duration-300">
-                Clear Filters
+                Hapus Filter
             </button>
         </div>
 
-        <!-- Charts Section -->
+        <!-- Bagian Grafik -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Sales by Brand Bar Chart -->
+            <!-- Grafik Batang Penjualan berdasarkan Merek -->
             <div class="bg-gray-50 rounded-xl p-6 shadow-md border border-gray-200">
                 <h2 class="text-xl md:text-2xl font-semibold text-gray-700 mb-4 text-center">Total Sales by Brand 📊</h2>
                 <div class="chart-container">
                     <canvas id="salesByBrandChart"></canvas>
                 </div>
             </div>
-            <!-- Sales Distribution by Country Pie Chart -->
+            <!-- Grafik Lingkaran Distribusi Penjualan berdasarkan Negara -->
             <div class="bg-gray-50 rounded-xl p-6 shadow-md border border-gray-200">
                 <h2 class="text-xl md:text-2xl font-semibold text-gray-700 mb-4 text-center">Sales Distribution by Country 🗺️</h2>
                 <div class="chart-container">
@@ -83,7 +83,7 @@
     </div>
 
     <script>
-        // Directly use the provided JSON array data
+        // Langsung menggunakan data array JSON yang disediakan
         const salesData = [
             {"Date":"2022-05-27","Product Name":"Fear of God Essentials Tee","Product Type":"T-shirt","Brand":"Essentials","Gender":"Unisex","Category":"Limited Edition","Country":"Japan","Quantity":5,"Unit Price ($)":141.82,"Amount ($)":709.10,"Payment Mode":"Card"},
             {"Date":"2022-08-22","Product Name":"Yeezy Boost 350","Product Type":"Sneakers","Brand":"Adidas","Gender":"Unisex","Category":"Streetwear","Country":"USA","Quantity":2,"Unit Price ($)":267.34,"Amount ($)":534.68,"Payment Mode":"Cash on Delivery"},
@@ -433,37 +433,37 @@
             {"Date":"2022-02-15","Product Name":"Nike Tech Fleece","Product Type":"Hoodie","Brand":"Nike","Gender":"Women","Category":"Streetwear","Country":"Canada","Quantity":5,"Unit Price ($)":234.28,"Amount ($)":1171.40,"Payment Mode":"Cash on Delivery"},
             {"Date":"2022-01-01","Product Name":"Nike Dunk Low","Product Type":"Sneakers","Brand":"Nike","Gender":"Women","Category":"Streetwear","Country":"Japan","Quantity":2,"Unit Price ($)":294.89,"Amount ($)":589.78,"Payment Mode":"Wallet"},
             {"Date":"2022-03-10","Product Name":"Jordan 1 High","Product Type":"Sneakers","Brand":"Nike","Gender":"Women","Category":"Sportswear","Country":"USA","Quantity":1,"Unit Price ($)":208.24,"Amount ($)":208.24,"Payment Mode":"Cash on Delivery"},
-            {"Date":"2022-04-08","Product Name":"Jordan 1 High","Product Type":"Sneakers","Brand":"Nike","Gender":"Men","Category":"Casual","Country":"India","Quantity":5,"Unit Price ($)":94.25,"Amount ($)":471.25,"Payment Mode":"Wallet"},
+            {"Date":"2022-004-08","Product Name":"Jordan 1 High","Product Type":"Sneakers","Brand":"Nike","Gender":"Men","Category":"Casual","Country":"India","Quantity":5,"Unit Price ($)":94.25,"Amount ($)":471.25,"Payment Mode":"Wallet"},
             {"Date":"2022-08-03","Product Name":"Nike Tech Fleece","Product Type":"Hoodie","Brand":"Nike","Gender":"Women","Category":"Casual","Country":"Germany","Quantity":5,"Unit Price ($)":259.00,"Amount ($)":1295.00,"Payment Mode":"Card"},
             {"Date":"2022-05-05","Product Name":"Puma Joggers","Product Type":"Joggers","Brand":"Puma","Gender":"Women","Category":"Casual","Country":"Germany","Quantity":4,"Unit Price ($)":299.73,"Amount ($)":1198.92,"Payment Mode":"Cash on Delivery"},
             {"Date":"2022-05-19","Product Name":"Adidas Ultraboost","Product Type":"Sneakers","Brand":"Adidas","Gender":"Men","Category":"Casual","Country":"Canada","Quantity":5,"Unit Price ($)":71.26,"Amount ($)":356.30,"Payment Mode":"Cash on Delivery"},
             {"Date":"2022-07-17","Product Name":"Nike Dunk Low","Product Type":"Sneakers","Brand":"Nike","Gender":"Women","Category":"Limited Edition","Country":"Japan","Quantity":5,"Unit Price ($)":270.14,"Amount ($)":1350.70,"Payment Mode":"Wallet"}
         ];
 
-        let brandChart, countryChart; // Chart.js instances
+        let brandChart, countryChart; // Instansi Chart.js
 
-        let selectedBrand = 'All'; // Current filter selection for Brand
-        let selectedCountry = 'All'; // Current filter selection for Country
+        let selectedBrand = 'All'; // Pilihan filter saat ini untuk Merek
+        let selectedCountry = 'All'; // Pilihan filter saat ini untuk Negara
 
-        // Register the datalabels plugin globally
+        // Daftarkan plugin datalabels secara global
         Chart.register(ChartDataLabels);
 
         /**
-         * Renders the dashboard with updated metrics and charts based on current filters.
+         * Merender dasbor dengan metrik dan grafik yang diperbarui berdasarkan filter saat ini.
          */
         function renderDashboard() {
-            // Filter the data based on selected brand and country
+            // Memfilter data berdasarkan merek dan negara yang dipilih
             const filteredData = salesData.filter(row => {
                 const matchesBrand = (selectedBrand === 'All' || row.Brand === selectedBrand);
                 const matchesCountry = (selectedCountry === 'All' || row.Country === selectedCountry);
                 return matchesBrand && matchesCountry;
             });
 
-            // Calculate Total Sales Metric
+            // Menghitung Metrik Total Penjualan
             const totalSales = filteredData.reduce((sum, row) => sum + row['Amount ($)'], 0);
             document.getElementById('totalSalesMetric').textContent = `$${totalSales.toFixed(2)}`;
 
-            // Calculate Sales by Brand
+            // Menghitung Penjualan berdasarkan Merek
             const salesByBrand = filteredData.reduce((acc, row) => {
                 acc[row.Brand] = (acc[row.Brand] || 0) + row['Amount ($)'];
                 return acc;
@@ -471,7 +471,7 @@
             const brandLabels = Object.keys(salesByBrand);
             const brandData = Object.values(salesByBrand);
 
-            // Calculate Sales by Country
+            // Menghitung Penjualan berdasarkan Negara
             const salesByCountry = filteredData.reduce((acc, row) => {
                 acc[row.Country] = (acc[row.Country] || 0) + row['Amount ($)'];
                 return acc;
@@ -479,7 +479,7 @@
             const countryLabels = Object.keys(salesByCountry);
             const countryData = Object.values(salesByCountry);
 
-            // Update Sales by Brand Chart
+            // Memperbarui Grafik Penjualan berdasarkan Merek
             if (brandChart) {
                 brandChart.data.labels = brandLabels;
                 brandChart.data.datasets[0].data = brandData;
@@ -491,18 +491,18 @@
                     data: {
                         labels: brandLabels,
                         datasets: [{
-                            label: 'Total Sales ($)',
+                            label: 'Total Penjualan ($)',
                             data: brandData,
                             backgroundColor: [
                                 '#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#6366F1',
                                 '#06B6D4', '#EC4899', '#84CC16', '#F97316', '#A855F7'
-                            ], // Tailwind blue-500, green-500, yellow-500, etc.
+                            ], // Tailwind blue-500, green-500, yellow-500, dll.
                             borderColor: [
                                 '#2563EB', '#059669', '#D97706', '#DC2626', '#4F46E5',
                                 '#0891B2', '#DB2777', '#65A30D', '#EA580C', '#9333EA'
                             ],
                             borderWidth: 1,
-                            borderRadius: 8 // Rounded corners for bars
+                            borderRadius: 8 // Sudut membulat untuk batang
                         }]
                     },
                     options: {
@@ -512,7 +512,7 @@
                             legend: {
                                 display: false
                             },
-                            datalabels: { // Datalabels plugin configuration
+                            datalabels: { // Konfigurasi plugin Datalabels
                                 anchor: 'end',
                                 align: 'top',
                                 formatter: (value) => `$${value.toFixed(2)}`,
@@ -527,13 +527,13 @@
                                 beginAtZero: true,
                                 title: {
                                     display: true,
-                                    text: 'Amount ($)'
+                                    text: 'Jumlah ($)'
                                 }
                             },
                             x: {
                                 title: {
                                     display: true,
-                                    text: 'Brand'
+                                    text: 'Merek'
                                 }
                             }
                         }
@@ -541,7 +541,7 @@
                 });
             }
 
-            // Update Sales by Country Chart
+            // Memperbarui Grafik Penjualan berdasarkan Negara
             if (countryChart) {
                 countryChart.data.labels = countryLabels;
                 countryChart.data.datasets[0].data = countryData;
@@ -553,14 +553,14 @@
                     data: {
                         labels: countryLabels,
                         datasets: [{
-                            label: 'Sales Distribution',
+                            label: 'Distribusi Penjualan',
                             data: countryData,
                             backgroundColor: [
                                 '#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#6366F1',
                                 '#06B6D4', '#EC4899', '#84CC16', '#F97316', '#A855F7',
                                 '#FBBF24', '#C084FC', '#F472B6', '#1D4ED8', '#047857'
                             ],
-                            borderColor: '#ffffff', // White border for slices
+                            borderColor: '#ffffff', // Batas putih untuk irisan
                             borderWidth: 2
                         }]
                     },
@@ -569,7 +569,7 @@
                         maintainAspectRatio: false,
                         plugins: {
                             legend: {
-                                position: 'right', // Place legend on the right for better space usage
+                                position: 'right', // Letakkan legenda di kanan untuk penggunaan ruang yang lebih baik
                                 labels: {
                                     font: {
                                         size: 14
@@ -590,12 +590,12 @@
                                     }
                                 }
                             },
-                            datalabels: { // Datalabels plugin configuration for pie chart
-                                color: '#fff', // White color for better contrast on colored slices
+                            datalabels: { // Konfigurasi plugin Datalabels untuk grafik lingkaran
+                                color: '#fff', // Warna putih untuk kontras yang lebih baik pada irisan berwarna
                                 formatter: (value, context) => {
                                     const total = context.chart.data.datasets[0].data.reduce((sum, val) => sum + val, 0);
                                     const percentage = (value / total * 100).toFixed(1) + '%';
-                                    return percentage; // Show percentage on pie slices
+                                    return percentage; // Tampilkan persentase pada irisan lingkaran
                                 },
                                 font: {
                                     weight: 'bold',
@@ -609,7 +609,7 @@
         }
 
         /**
-         * Initializes filter dropdowns with unique values from the dataset.
+         * Menginisialisasi dropdown filter dengan nilai unik dari dataset.
          */
         function initializeFilters() {
             const brands = [...new Set(salesData.map(row => row.Brand))].sort();
@@ -631,7 +631,7 @@
                 countryFilter.appendChild(option);
             });
 
-            // Add event listeners for filter changes
+            // Menambahkan event listener untuk perubahan filter
             brandFilter.addEventListener('change', (event) => {
                 selectedBrand = event.target.value;
                 renderDashboard();
@@ -642,7 +642,7 @@
                 renderDashboard();
             });
 
-            // Event listener for Clear Filters button
+            // Event listener untuk tombol Hapus Filter
             document.getElementById('clearFiltersBtn').addEventListener('click', () => {
                 selectedBrand = 'All';
                 selectedCountry = 'All';
@@ -652,9 +652,9 @@
             });
         }
 
-        // Initialize dashboard on window load
+        // Menginisialisasi dasbor saat jendela dimuat
         window.onload = function() {
-            // salesData is now directly assigned, no need to parseCSV
+            // salesData sekarang langsung ditetapkan, tidak perlu parseCSV
             initializeFilters();
             renderDashboard();
         };
